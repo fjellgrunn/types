@@ -19,4 +19,4 @@ const myKey: PriKey = {
   sk: 'my-sk'
 };
 ```
-
+TEST
