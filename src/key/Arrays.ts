@@ -1,3 +1,15 @@
+import { PriKey } from './Primary';
+import { ComKey } from './Composite';
+
+export type ItemKey<
+  S extends string,
+  L1 extends string = never,
+  L2 extends string = never,
+  L3 extends string = never,
+  L4 extends string = never,
+  L5 extends string = never
+> = PriKey<S> | ComKey<S, L1, L2, L3, L4, L5>;
+
 export type ItemTypeArray<
   S extends string,
   L1 extends string = never,
