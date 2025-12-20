@@ -1,0 +1,76 @@
+{
+  "name": "@fjell/types",
+  "description": "Core Types and Interfaces for Fjell",
+  "version": "4.4.0",
+  "keywords": [
+    "types",
+    "fjell",
+    "interfaces"
+  ],
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./item": {
+      "types": "./dist/item/index.d.ts",
+      "import": "./dist/item/index.js",
+      "default": "./dist/item/index.js"
+    },
+    "./key": {
+      "types": "./dist/key/index.d.ts",
+      "import": "./dist/key/index.js",
+      "default": "./dist/key/index.js"
+    },
+    "./query": {
+      "types": "./dist/query/index.d.ts",
+      "import": "./dist/query/index.js",
+      "default": "./dist/query/index.js"
+    },
+    "./operations": {
+      "types": "./dist/operations/index.d.ts",
+      "import": "./dist/operations/index.js",
+      "default": "./dist/operations/index.js"
+    },
+    "./Coordinate": {
+      "types": "./dist/Coordinate.d.ts",
+      "import": "./dist/Coordinate.js",
+      "default": "./dist/Coordinate.js"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .ts --fix",
+    "dev": "concurrently \"tsc --noEmit --watch\" \"node build.js --watch\"",
+    "build": "npm run lint && node build.js",
+    "clean": "rm -rf dist",
+    "test": "npm run lint && vitest run --coverage",
+    "precommit": "npm run clean && npm run lint && npm run build && npm run test",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.39.1",
+    "@fjell/common-config": "^1.1.36",
+    "@swc/core": "^1.15.2",
+    "@tsconfig/recommended": "^1.0.13",
+    "@types/luxon": "^3.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "@vitest/coverage-v8": "4.0.9",
+    "concurrently": "^9.2.1",
+    "esbuild": "0.25.11",
+    "eslint": "^9.38.0",
+    "typescript": "^5.9.3",
+    "vitest": "4.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getfjell/core.git"
+  }
+}
