@@ -1,7 +1,7 @@
 {
   "name": "@fjell/types",
   "description": "Core Types and Interfaces for Fjell",
-  "version": "4.4.2",
+  "version": "4.4.3",
   "keywords": [
     "types",
     "fjell",
@@ -71,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getfjell/core.git"
+    "url": "git+https://github.com/getfjell/types.git"
   }
 }
