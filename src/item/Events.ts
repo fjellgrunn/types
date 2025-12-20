@@ -7,7 +7,7 @@ import type { Item } from './Item';
  */
 export interface ItemEvent {
   at: Date | null;
-  by?: ComKey<any, any | never, any | never, any | never, any | never, any | never> | PriKey<any>;
+  by?: ComKey<any, any, any, any, any, any> | PriKey<any>;
   agg?: Item<any, any, any, any, any, any>;
 }
 

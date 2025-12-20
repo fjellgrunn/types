@@ -1,7 +1,7 @@
 import { Item } from "../item";
 import { PriKey } from "../key";
 import { ItemQuery } from "../query/ItemQuery";
-import { AffectedKeys, AllOperationResult, AllOptions, FindOperationResult, FindOptions, OperationParams, Operations } from "./Operations";
+import { AffectedKeys, AllOperationResult, AllOptions, CreateOptions, FindOperationResult, FindOptions, OperationParams, Operations } from "./Operations";
 
 /**
  * Primary Operations interface - specialized for primary (top-level) items only.
@@ -57,7 +57,7 @@ export interface PrimaryOperations<
   // CRUD operations - PriKey only
   create(
     item: Partial<Item<S>>,
-    options?: { key?: PriKey<S> }
+    options?: CreateOptions<S>
   ): Promise<V>;
 
   get(key: PriKey<S>): Promise<V | null>;

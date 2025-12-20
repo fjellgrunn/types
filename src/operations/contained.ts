@@ -1,7 +1,7 @@
 import { Item } from "../item";
 import { ComKey, LocKeyArray } from "../key";
 import { ItemQuery } from "../query/ItemQuery";
-import { AffectedKeys, AllOperationResult, AllOptions, FindOperationResult, FindOptions, OperationParams, Operations } from "./Operations";
+import { AffectedKeys, AllOperationResult, AllOptions, CreateOptions, FindOperationResult, FindOptions, OperationParams, Operations } from "./Operations";
 
 /**
  * Contained Operations interface - specialized for contained (hierarchical) items only.
@@ -89,7 +89,7 @@ export interface ContainedOperations<
   // Create operation - locations for context
   create(
     item: Partial<Item<S, L1, L2, L3, L4, L5>>,
-    options?: { locations?: LocKeyArray<L1, L2, L3, L4, L5> }
+    options?: CreateOptions<S, L1, L2, L3, L4, L5>
   ): Promise<V>;
 
   // CRUD operations - ComKey only
