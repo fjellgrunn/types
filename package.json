@@ -71,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getfjell/core.git"
+    "url": "git+https://github.com/getfjell/types.git"
   }
 }
