@@ -658,5 +658,5 @@ export function isComKey<
 >(
   key: PriKey<S> | ComKey<S, L1, L2, L3, L4, L5>
 ): key is ComKey<S, L1, L2, L3, L4, L5> {
-  return 'loc' in key && key.loc && Array.isArray(key.loc) && key.loc.length > 0;
+  return !!('loc' in key && key.loc && Array.isArray(key.loc) && key.loc.length > 0);
 }
