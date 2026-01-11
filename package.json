@@ -1,7 +1,7 @@
 {
   "name": "@fjell/types",
   "description": "Core Types and Interfaces for Fjell",
-  "version": "4.4.6",
+  "version": "4.4.7",
   "keywords": [
     "types",
     "fjell",
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.39.1",
-    "@fjell/common-config": "^1.1.36",
+    "@fjell/common-config": "^1.1.37",
     "@swc/core": "^1.15.2",
     "@tsconfig/recommended": "^1.0.13",
     "@types/luxon": "^3.7.1",
@@ -71,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getfjell/types.git"
+    "url": "git+https://github.com/fjellgrunn/types.git"
   }
 }
