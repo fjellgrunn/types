@@ -71,6 +71,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getfjell/types.git"
+    "url": "git+https://github.com/fjellgrunn/types.git"
   }
 }
