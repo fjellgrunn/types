@@ -60,6 +60,15 @@ describe('ItemQuery', () => {
       expect(isCondition(condition)).toBe(true);
     });
 
+    test('should return false when column is missing', () => {
+      // @ts-ignore
+      const condition = {
+        value: [123, 234],
+        operator: 'in' as ConditionOperator
+      };
+      expect(isCondition(condition)).toBe(false);
+    });
+
   });
 
   describe('ItemQuery type', () => {

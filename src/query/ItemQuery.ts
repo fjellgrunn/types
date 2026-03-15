@@ -50,14 +50,17 @@ export type CompoundCondition = {
 export const isCondition = (condition: any): condition is Condition => {
   return (
     typeof condition.column === 'string' &&
-    (Array.isArray(condition.value) && condition.value.every((item: any) => typeof item === 'string')) ||
-    (Array.isArray(condition.value) && condition.value.every((item: any) => typeof item === 'number')) ||
-    typeof condition.value === 'string' ||
-    typeof condition.value === 'number' ||
-    typeof condition.value === 'boolean' ||
-    condition.value instanceof Date ||
-    condition.value === null
-  ) && (condition.operator ? typeof condition.operator === 'string' : true);
+    (
+      (Array.isArray(condition.value) && condition.value.every((item: any) => typeof item === 'string')) ||
+      (Array.isArray(condition.value) && condition.value.every((item: any) => typeof item === 'number')) ||
+      typeof condition.value === 'string' ||
+      typeof condition.value === 'number' ||
+      typeof condition.value === 'boolean' ||
+      condition.value instanceof Date ||
+      condition.value === null
+    ) &&
+    (condition.operator ? typeof condition.operator === 'string' : true)
+  );
 }
 
 export type EventQuery = {
