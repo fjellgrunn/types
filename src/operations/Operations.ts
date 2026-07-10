@@ -292,6 +292,21 @@ export interface UpdateOptions {
   replace?: boolean;
 
   /**
+   * Number of times to retry the update phase of an upsert operation if the
+   * item is deleted between the initial get and the update call (concurrent
+   * deletion race condition). Each retry re-creates the item before
+   * attempting the update again.
+   *
+   * **Default: `0` (no retry)**
+   *
+   * Set to 1-3 for high-concurrency environments where concurrent
+   * deletions during upsert are expected.
+   *
+   * @default 0
+   */
+  retryCount?: number;
+
+  /**
    * Future options can be added here without breaking changes:
    * - validate?: boolean - Enable/disable validation
    * - dryRun?: boolean - Simulate update without committing
