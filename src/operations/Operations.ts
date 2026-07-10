@@ -629,13 +629,18 @@ export interface Operations<
  * ```
  */
 export function isPriKey<S extends string>(
-  key: PriKey<S> | ComKey<S, any, any, any, any, any>
+  key: PriKey<S> | ComKey<S, any, any, any, any, any> | null | undefined
 ): key is PriKey<S> {
-  return !('loc' in key) || !key.loc;
+  if (key == null || typeof key !== 'object') {
+    return false;
+  }
+  return !('loc' in key) || key.loc == null;
 }
 
 /**
  * Type guard to check if key is a ComKey
+ *
+ * Empty `loc` arrays are valid ComKeys (foreign-key / cross-location lookups).
  *
  * @param key - Key to check
  * @returns true if key is a ComKey
@@ -656,7 +661,10 @@ export function isComKey<
   L4 extends string = never,
   L5 extends string = never
 >(
-  key: PriKey<S> | ComKey<S, L1, L2, L3, L4, L5>
+  key: PriKey<S> | ComKey<S, L1, L2, L3, L4, L5> | null | undefined
 ): key is ComKey<S, L1, L2, L3, L4, L5> {
-  return !!('loc' in key && key.loc && Array.isArray(key.loc) && key.loc.length > 0);
+  if (key == null || typeof key !== 'object') {
+    return false;
+  }
+  return 'loc' in key && Array.isArray(key.loc);
 }

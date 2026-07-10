@@ -69,6 +69,16 @@ describe('ItemQuery', () => {
       expect(isCondition(condition)).toBe(false);
     });
 
+    test('should return false for null and undefined without throwing', () => {
+      expect(isCondition(null)).toBe(false);
+      expect(isCondition(undefined)).toBe(false);
+    });
+
+    test('should return false for non-object values without throwing', () => {
+      expect(isCondition(42)).toBe(false);
+      expect(isCondition('not-a-condition')).toBe(false);
+    });
+
   });
 
   describe('ItemQuery type', () => {

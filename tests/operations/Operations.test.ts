@@ -17,6 +17,16 @@ describe('Operations Type Guards', () => {
       const key = { kt: 'user', pk: 'user-123', loc: undefined };
       expect(isPriKey(key)).toBe(true);
     });
+
+    it('should return false for null and undefined without throwing', () => {
+      expect(isPriKey(null as any)).toBe(false);
+      expect(isPriKey(undefined as any)).toBe(false);
+    });
+
+    it('should reject empty loc array (valid ComKey foreign-key form)', () => {
+      const key = { kt: 'user', pk: 'user-123', loc: [] };
+      expect(isPriKey(key)).toBe(false);
+    });
   });
 
   describe('isComKey', () => {
@@ -30,9 +40,15 @@ describe('Operations Type Guards', () => {
       expect(isComKey(priKey)).toBe(false);
     });
 
-    it('should reject key with empty loc array', () => {
+    it('should accept key with empty loc array (foreign-key / cross-location lookup)', () => {
       const key = { kt: 'user', pk: 'user-123', loc: [] };
-      expect(isComKey(key)).toBe(false);
+      expect(isComKey(key)).toBe(true);
+      expect(isPriKey(key)).toBe(false);
+    });
+
+    it('should return false for null and undefined without throwing', () => {
+      expect(isComKey(null as any)).toBe(false);
+      expect(isComKey(undefined as any)).toBe(false);
     });
   });
 });

@@ -48,6 +48,9 @@ export type CompoundCondition = {
 };
 
 export const isCondition = (condition: any): condition is Condition => {
+  if (condition == null || typeof condition !== 'object') {
+    return false;
+  }
   return (
     typeof condition.column === 'string' &&
     (
