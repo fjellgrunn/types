@@ -19,8 +19,7 @@ const buildConfig = {
   target: 'es2022',
   format: 'esm',
   external: [
-    'console',
-    'luxon'
+    'console'
   ],
   define: {
     'process.env.NODE_ENV': '"production"'

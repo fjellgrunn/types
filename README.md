@@ -14,9 +14,8 @@ npm install @fjell/types
 import { Item, PriKey, ComKey } from '@fjell/types';
 
 // Use types in your code
-const myKey: PriKey = {
-  pk: 'my-pk',
-  sk: 'my-sk'
+const myKey: PriKey<'user'> = {
+  kt: 'user',
+  pk: 'my-pk'
 };
 ```
-TEST
