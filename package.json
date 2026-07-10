@@ -42,6 +42,12 @@
       "default": "./dist/Coordinate.js"
     }
   },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "scripts": {
     "lint": "eslint . --ext .ts --fix",
